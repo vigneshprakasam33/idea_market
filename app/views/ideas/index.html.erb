@@ -1,0 +1,44 @@
+
+
+<div class="row">
+  <div class="columns large-9 large-centered">
+    <br>
+    <h4 class="text-center">Ideas</h4>
+<table id="idea_table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Skills</th>
+      <th>Additional info</th>
+      <th>Platform</th>
+      <th>Role</th>
+      <th></th>
+      <!--<th></th>-->
+      <!--<th></th>-->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.name %></td>
+        <td><%= idea.description %></td>
+        <td><%= idea.skills %></td>
+        <td><%= idea.additional_info %></td>
+        <td><%= idea.platform.name %></td>
+        <td><%= idea.role.name %></td>
+        <td><%= link_to 'Show', idea %></td>
+        <!--<td><%#= link_to 'Edit', edit_idea_path(idea) %></td>-->
+        <!--<td><%#= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+    <%= link_to 'New Idea', new_idea_path %>
+ </div>
+</div>
+
+
