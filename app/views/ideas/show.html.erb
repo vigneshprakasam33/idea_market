@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+                                    <br>
+<div class="row">
+  <div class="columns large-4 large-centered">
+
 
 <p>
   <strong>Name:</strong>
@@ -22,13 +25,34 @@
 
 <p>
   <strong>Platform:</strong>
-  <%= @idea.platform_id %>
+  <%= @idea.platform.name %>
 </p>
+
+
+    <p>
+      <strong>Idea created by:</strong>
+      <% if @idea.user %>
+      <%= @idea.user.uname %>
+      <% end  %>
+    </p>
 
 <p>
-  <strong>Role:</strong>
-  <%= @idea.role_id %>
+  <strong>Help</strong>
+  <% if @idea.taken_up_id.blank? %>
+      <%= @idea.role.name + " - Still Open" %>
+      <br>
+      <br>
+      <% if current_user %>
+          <%= link_to "Take up this role", taken_up_users_path(:idea_id => @idea.id, :taken_up_id => current_user.id) , :class => "button success radius tiny" %>
+      <% end %>
+  <% else %>
+      <%= @idea.role.name + " - #{User.find(@idea.taken_up_id).uname}" %>
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+
+
+    </div>
+</div>
+<%#= link_to 'Edit', edit_idea_path(@idea) %> |
+<%#= link_to 'Back', ideas_path %>

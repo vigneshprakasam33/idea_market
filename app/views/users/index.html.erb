@@ -1,0 +1,38 @@
+
+<%if current_user and current_user.is_admin %>
+<div class="row">
+  <div class="columns large-9 large-centered">
+<h3 class="text-center">Users</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uname</th>
+      <th>Email</th>
+      <th>Is admin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.uname %></td>
+        <td><%= user.email %></td>
+        <td><%= user.is_admin %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ </div>
+</div>
+ <% end  %>
+
+<%= link_to 'New User', new_user_path %>

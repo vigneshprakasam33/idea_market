@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uuid: 
+  uname: MyString
+  password: MyString
+  email: MyString
+  salt: MyString
+  is_admin: false
+
+two:
+  uuid: 
+  uname: MyString
+  password: MyString
+  email: MyString
+  salt: MyString
+  is_admin: false

@@ -13,7 +13,7 @@
       </ul>
     </div>
   <% end %>
-
+        <%= f.hidden_field :user_id  , :value => "#{current_user.id}" %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -38,8 +38,8 @@
     <%= f.label :role_id %><br>
     <%= f.collection_select :role_id, Role.all, :id, :name %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions text-center">
+    <%= f.submit :class => "button success radius" %>
   </div>
 <% end %>
   </div>

@@ -12,7 +12,7 @@
       <th>Skills</th>
       <th>Additional info</th>
       <th>Platform</th>
-      <th>Role</th>
+      <th>Help</th>
       <th></th>
       <!--<th></th>-->
       <!--<th></th>-->
@@ -28,7 +28,7 @@
         <td><%= idea.additional_info %></td>
         <td><%= idea.platform.name %></td>
         <td><%= idea.role.name %></td>
-        <td><%= link_to 'Show', idea %></td>
+        <td><%= link_to 'View', idea , :class => "button  success radius tiny" %></td>
         <!--<td><%#= link_to 'Edit', edit_idea_path(idea) %></td>-->
         <!--<td><%#= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
@@ -37,7 +37,11 @@
 </table>
 
 <br>
-    <%= link_to 'New Idea', new_idea_path %>
+    <% if current_user  %>
+        <div class="text-center">
+    <%= link_to 'New Idea', new_idea_path , :class => "button success radius " %>
+        </div>
+    <% end %>
  </div>
 </div>
 
