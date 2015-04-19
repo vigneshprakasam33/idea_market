@@ -40,6 +40,9 @@ gem 'jquery-datatables-rails'
 
 gem 'foundation-rails' , "~> 5.3.1.0"
 
+#heroku
+gem 'rails_12factor'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
