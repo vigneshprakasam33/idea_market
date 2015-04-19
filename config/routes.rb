@@ -1,4 +1,14 @@
 IdeaMarket::Application.routes.draw do
+  resources :users do
+    collection do
+      post :login
+      get :logout
+      get :taken_up
+    end
+  end
+
+  get 'signin' => 'users#signin'
+
   resources :ideas
 
   resources :platforms
